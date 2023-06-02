@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ana Paula I.A Bot</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("fundo.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+
+        .content {
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 50px auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+        }
+        
+        p {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Guia</h2>
+        <ul>
+            <li><a href="#descricao">Descrição</a></li>
+            <li><a href="#funcionamento">Funcionamento</a></li>
+            <li><a href="#recursos">Recursos e Comandos</a></li>
+            <li><a href="#integracoes">Integrações e Dependências</a></li>
+            <li><a href="#observacoes">Observações</a></li>
+            <li><a href="#exemplo">Exemplo de Uso</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1 style="text-align: center;">Ana Paula I.A Bot</h1>
+        <h2 id="descricao">Descrição:</h2>
+        <p style="text-align: justify;">
+            A <b>Ana Paula I.A Bot</b> é uma aplicação pogramada em python, que utiliza a implementação de uma rede neural para gerar respostas,
+            scripts e auxiliar em dúvidas relacionadas a qualquer assunto solicitado. O objetivo principal do bot é fornecer
+            interações inteligentes e úteis aos usuários do Discord, utilizando tecnologia avançada de processamento de
+            linguagem natural.
+        </p>
+        <h2 id="funcionamento">Funcionamento:</h2>
+        <p style="text-align: justify;">
+            O Ana Paula I.A Bot está integrado à plataforma Discord e opera como um cliente do Discord. Ele se conecta aos
+            servidores do Discord e recebe eventos, como mensagens de texto enviadas pelos usuários.
+        </p>
+            <p>
+                O bot utiliza a biblioteca Discord.py para interagir com a API do Discord e receber eventos em tempo
+                real.
+            </p>
+            <p>
+                Quando um usuário envia uma mensagem de texto, o bot verifica se é um comando ou uma solicitação de
+                conversação com a IA.
+            </p>
+            <p>
+                Se for um comando, o bot executa a ação correspondente, como enviar mensagens para canais específicos,
+                fornecer informações de ajuda ou realizar ações administrativas.
+            </p>
+            <p>
+                Se for uma solicitação de conversação com a IA, o bot utiliza a implementação de uma rede neural
+                fornecida pela biblioteca OpenAI para gerar uma resposta inteligente.
+            </p>
+            <p>
+                O bot extrai o contexto da conversa anterior do usuário, se houver, e combina com a mensagem atual para
+                formar um prompt de entrada para a rede neural.
+            </p>
+            <p>
+                O prompt é dividido em partes menores, se necessário, para respeitar o limite de tokens da API do
+                OpenAI.
+            </p>
+            <p>
+                Para cada parte do prompt, o bot envia uma solicitação para a API do OpenAI, que retorna uma resposta
+                gerada pela rede neural.
+            </p>
+            <p>
+                O bot concatena as respostas parciais para formar a resposta completa.
+            </p>
+            <p>
+                Se a resposta for muito longa para ser exibida diretamente no Discord, o bot salva a resposta em um
+                arquivo de texto e envia o arquivo como anexo no canal de conversa.
+            </p>
+            <p>
+                O bot armazena o contexto da conversa para uso futuro, permitindo uma continuidade mais suave na
+                interação com a IA.
+            </p>
+            <h2 id="recursos">Recursos e Comandos:</h2>
+            <ul>
+                <li>/enviar &lt;mensagem&gt;: Envia a mensagem fornecida para canais específicos com uma menção a
+                    @everyone.</li>
+                <li>/admin_help: Fornece informações sobre os comandos disponíveis para administradores.</li>
+                <li>!updates &lt;mensagem&gt;: Envia a mensagem fornecida para um canal específico de atualizações com
+                    uma menção a @everyone.</li>
+                <li>!avisar &lt;mensagem&gt;: Envia a mensagem fornecida para um canal específico de notificações com
+                    uma menção a @everyone.</li>
+                <li>!chat_fox &lt;mensagem&gt;: Envia a mensagem fornecida para o canal geral de bate-papo.</li>
+                <li>.ap &lt;pergunta&gt;: Solicita uma resposta da IA para a pergunta fornecida. A IA utiliza uma rede
+                    neural para gerar uma resposta inteligente.</li>
+            </ul>
+            <h2 id="integracoes">Integrações e Dependências:</h2>
+            <p>
+                A aplicação utiliza a biblioteca Discord.py para interagir com a API do Discord e receber eventos em
+                tempo real.
+            </p>
+            <p>
+                A aplicação utiliza a biblioteca OpenAI para implementar a funcionalidade de rede neural e gerar
+                respostas inteligentes.
+            </p>
+            <p>
+                É necessário fornecer um token de autenticação do Discord (discord_token) e um token de autenticação do
+                OpenAI (openai_token).
+            </p>
+            <p>
+                É necessário especificar o motor de rede neural a ser usado (openai_engine), por exemplo,
+                "text-davinci-003".
+            </p>
+            <h2 id="observacoes">Observações:</h2>
+            <p>
+                Certifique-se de substituir os valores das variáveis discord_token, openai_token, openai_engine pelos
+                seus próprios tokens e configurações.
+            </p>
+            <p>
+                O bot armazena o contexto da conversa em memória durante a execução. Se a aplicação for reiniciada, o
+                contexto será perdido.
+            </p>
+            <p>
+                É recomendado configurar os canais de avisos, atualizações e bate-papo geral, fornecendo os IDs corretos
+                dos canais do Discord.
+            </p>
+            <p>
+                A aplicação precisa de permissões adequadas no servidor do Discord para executar certas ações, como
+                enviar mensagens em canais específicos e mencionar @everyone.
+            </p>
+            <p>
+                O bot pode ser estendido e personalizado de acordo com as necessidades do usuário, adicionando novos
+                comandos, funcionalidades e integrações.
+            </p>
+            <h2 id="exemplo">Exemplo de Uso:</h2>
+            <p>
+                Um usuário envia a mensagem /enviar Olá, pessoal! Há uma atualização importante que quero compartilhar
+                com vocês.
+            </p>
+            <p>
+                O bot envia a mensagem para os canais específicos configurados com uma menção a @everyone.
+            </p>
+            <p>
+                Um usuário envia a mensagem .ap Qual é o significado da vida?
+            </p>
+            <p>
+                O bot utiliza a IA baseada em rede neural para gerar uma resposta inteligente à pergunta do usuário.
+            </p>
+            <p>
+                Se a resposta for curta o suficiente, o bot responde diretamente no canal de conversa.
+            </p>
+            <p>
+                Se a resposta for muito longa, o bot salva a resposta em um arquivo de texto e envia o arquivo como
+                anexo no canal de conversa.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
